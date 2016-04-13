@@ -1,7 +1,12 @@
 $(document).on('ready', function() {
 	$('#home').on('click', function() {
-		window.location.href = "/pages/kennygea/WideShot/"
-	})
+		window.location.href = "../index.html"
+	});
+	$('.ui.dropdown')
+	  .dropdown({
+		// you can use any ui transition
+		transition: 'drop'
+	  });
 
 	$(function() {
         $('.jcarousel').jcarousel({
