@@ -15,6 +15,7 @@ body {
 	margin: 5px;
 }
 
+
 .event {
 	height: 100px;
 }
@@ -45,6 +46,10 @@ body {
 	height: 100%;
 }
 
+.ui.cards {
+	text-align: center;
+}
+
 .project.card {
 	height: 200px;
 	padding: 10px;
@@ -61,6 +66,7 @@ body {
 	color: #f0f0f5;
 	font-family: 'Poiret One', cursive;
 }
+
 
 #home, #projects{
 	color: #f0f0f5;
