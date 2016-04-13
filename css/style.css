@@ -64,7 +64,7 @@ body {
 }
 .ui.header.feed {
 	font-family: 'Poiret One', cursive;
-	margin: 0;
+	
 }
 .ui.header.wordmark{
 	position: relative;
@@ -91,6 +91,11 @@ body {
 	top:50px;
 	position: relative;
 	font-size: 4em;
+}
+
+.create.project {
+	margin-left:50%;
+	margin-top:50%;
 }
 
 .responsive-iframe-container {
