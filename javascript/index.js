@@ -2,10 +2,10 @@ $(document).ready(function() {
 	$('.user.icon').on('click', function() {
 		console.log(window.location.href);
 
-		window.location = window.location + "views/profile.html"
+		window.location =  "./views/profile.html"
 	})
 	$('#home').on('click', function() {
-		window.location.href = "/pages/kennygea/WideShot/"
+		window.location.href = "./index.html"
 	})
 	
 	var content = [
@@ -31,5 +31,7 @@ $(document).ready(function() {
 		$(".ui.modal").modal("show");
 	
 	});
+	$('.ui.checkbox').checkbox();
+	
 });
 	  
