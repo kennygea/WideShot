@@ -25,7 +25,7 @@ body {
 }
 
 .header{
-	min-height: 2.5em;
+	
 }
 .four.wide.feed {
 	text-align: center;
@@ -58,18 +58,18 @@ body {
 }
 
 .project.card {
-	height: 200px;
 	padding: 10px;
 	width: 100%;
 
 }
 .ui.header.feed {
 	font-family: 'Poiret One', cursive;
+	margin: 0;
 }
 .ui.header.wordmark{
 	position: relative;
-	left: 2em;
-	top: .75em;
+	left: 1em;
+	top: .50em;
 	font-size: 18pt;
 	color: #f0f0f5;
 	font-family: 'Poiret One', cursive;
@@ -91,6 +91,24 @@ body {
 	top:50px;
 	position: relative;
 	font-size: 4em;
+}
+
+.responsive-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+ 
+.responsive-iframe-container iframe,   
+.vresponsive-iframe-container object,  
+.vresponsive-iframe-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 span {

@@ -25,7 +25,11 @@ $(document).ready(function() {
 	  .dropdown({
 		// you can use any ui transition
 		transition: 'drop'
-	  })
-	;
+	  });
+	  
+	$('#createProject').click(function() {
+		$(".ui.modal").modal("show");
 	
+	});
 });
+	  
