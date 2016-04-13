@@ -7,4 +7,17 @@ $(document).on('ready', function() {
 	$('#home').on('click', function() {
 		window.location.href = "/pages/kennygea/WideShot/"
 	})
+	
+	var content = [
+		{ title: 'Producers' },
+		{ title: 'Directors' },
+		{ title: 'Editors' },
+		{ title: 'Actors' }];
+		
+	$('.ui.search')
+	  .search({
+		source: content
+	  })
+	;
+	
 });
