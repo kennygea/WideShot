@@ -98,16 +98,15 @@
 				<div class="column">
 				</div>
 				<div class="column">
-					<form class="ui form">
+					<form action="./views/project.html" class="ui form">
 						<div class="content">
 							<div class="field">
 								<label>Description:</label>
 								<textarea rows="2"></textarea>
 							</div>
-							<button class="ui primary centered button">
-							  Create
-							</button>
-							<button class="ui centered button create">
+							<input type="submit" id="createButoon" class="ui primary centered button create">
+							</input>
+							<button class="ui centered button cancel">
 							  Cancel
 							</button>
 						</div>
@@ -123,7 +122,7 @@
 				<h1 class="ui header wordmark">WideShot</h1>
 			</div>
 			<a id="home" class="active item">Home</a>
-			<a class="ui simple dropdown item" >
+			<a href="./views/project.html" class="ui simple dropdown item" >
 				<span class="text">My Projects</span>
 				<i class="dropdown icon"></i>
 				<div class="menu">
@@ -139,21 +138,18 @@
 		</div>
 	</div>
 	<div class="ui grid">
-		<div class="two wide column feed">
+		<div class="three wide column feed">
 			<h1 class="ui header feed">Filters:</h1>
-			<div class="ui category search">
-				<div class="ui icon input">
-					<input class="prompt" type="text" placeholder="Filter by...">
-					<i class="search icon"></i>
-				</div>
-				<div class="results"></div>
-			</div>
-			<div class="filters">
-					<div class="ui label">Actors <a><i class="remove icon"></i></a> </div>
-					<div class="ui label">Editors <a><i class="remove icon"></i></a> </div>
-			</div>
+			<select class="ui fluid multiple search selection dropdown" multiple="">
+			  <option value="">Filters</option>
+			  <option value="Pro">Producers</option>
+			  <option value="Dir">Directors</option>
+			  <option value="Act">Actors</option>
+			  <option value="Ed">Editors</option>
+			  <option value="Crw">Crew</option>
+			</select>
 		</div>
-		<div class=" ten wide column feed">
+		<div class=" nine wide column feed">
 			<h1 class="ui header feed">Projects</h1>
 			<div class="ui label"><a id="createProject"> Create Project<i class="plus icon"></i></a> </div>
 			<div class="ui blue segment project card">
@@ -163,7 +159,7 @@
 							<img src="./images/baylife.png">
 						</div>
 						<div class="content">
-							<a class="header">Baylife 2</a>
+							<a href="./views/project.html" class="header">Baylife 2</a>
 							<div class="meta">
 								<span class="cinema">The Return of Bay</span>
 							</div>
@@ -218,7 +214,7 @@
 					4/15/2016
 				  </div>
 				  <div class="summary">
-					 You have a <a>shoot</a> for <a>Baylife 2</a>.
+					 You have a <a>shoot</a> for <a href="./views/project.html">Baylife 2</a>.
 				  </div>
 				</div>
 			  </div>
@@ -231,7 +227,7 @@
 					5/20/2016
 				  </div>
 				  <div class="summary">
-					 You have a <a>edit</a> for <a>Baylife 2</a>
+					 You have a <a>edit</a> for <a href="./views/project.html">Baylife 2</a>
 				  </div>
 				</div>
 			  </div>
