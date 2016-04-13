@@ -9,7 +9,11 @@ body {
   font-family: 'Poiret One', cursive;
 }
 
-.column {
+.ui.grid>.row>.column {
+	margin-top: 50px;
+}
+
+.column.feed{
 	text-align: center;
 	border-style: solid;
 	margin: 5px;
@@ -109,8 +113,8 @@ body {
 	line-height: 2em;
 }
 
-#first_row{
-	background-image: url("file://C:/Users/Garron/Dropbox/6.813/Group Project/WideShot/images/profile_background.jpg");
+.ui.three.column.grid.profile {
+	background-image: url("../images/profile_background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	top:150px;
@@ -121,7 +125,18 @@ body {
 	border-bottom: 7px solid #9595b7;
 	margin-left: 0px;
 	margin-right: 0px;
+	margin-top: 0;
+	
 }
+
+.buffer.profile {
+	height: 50px;
+}
+
+#first_row{
+
+}
+
 
 .profile_header{
 	width: 60%;
