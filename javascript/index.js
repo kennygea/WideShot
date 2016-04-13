@@ -1,4 +1,4 @@
-$(document).on('ready', function() {
+$(document).ready(function() {
 	$('.user.icon').on('click', function() {
 		console.log(window.location.href);
 
@@ -13,10 +13,18 @@ $(document).on('ready', function() {
 		{ title: 'Directors' },
 		{ title: 'Editors' },
 		{ title: 'Actors' }];
+			
 		
 	$('.ui.search')
 	  .search({
 		source: content
+	  })
+	;
+	
+	$('.ui.dropdown')
+	  .dropdown({
+		// you can use any ui transition
+		transition: 'drop'
 	  })
 	;
 	

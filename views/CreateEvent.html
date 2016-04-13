@@ -1,0 +1,84 @@
+<html >
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+ 
+</head>
+<body>
+	<div class="header">
+		<div class="ui secondary menu">
+			<div class="left menu">
+				<h1 class="ui header wordmark">WideShot</h1>
+			</div>
+			<a id="home" class="active item">Home</a>
+			<a class="ui simple dropdown item" >
+				<span class="text">My Projects</span>
+				<i class="dropdown icon"></i>
+				<div class="menu">
+					<div class="header">Ongoing Projects</div>
+					<div class="item">Baylife 2</div>
+					<div class="divider"></div>
+					<div class="header">Past Projects</div>
+					<div class="item">Baylife</div>
+					<div class="item">The Room</div>
+				</div>
+			</a>
+			<a class="item"><i class="user icon"></i></a>
+		</div>
+	</div>
+	<div class="ui grid">
+		<div class="four wide column feed">
+			<h2 class="ui header feed">Create an Event:</h1>
+			<form class="ui form">
+				<div class="field">
+					<label>Title</label>
+					<input type="text" name="title" placeholder="Title">
+				</div>
+				<div class = "fields">
+					<div class="field">
+						<label>Time</label>
+						<input type="text" name="time" placeholder="Time">
+					</div>
+					<div class="field">
+						<label>Date</label>
+						<input type="text" name="date" placeholder="Date" id="datepicker">
+					</div>
+				</div>
+				<div class="field">
+					<label>Location</label>
+					<input type="text" name="location" placeholder="Location">
+				</div>
+				<div class="field">
+					<label>Description</label>
+					<textarea rows="2"></textarea>
+				 </div>
+				 <div class="field">
+					<label>Add Member</label>
+					<input type="text" name="memebers" placeholder="John Doe...">
+				 </div>
+				 <button class="ui button" type="submit">Clear</button>
+				 <button class="ui button" type="submit">Add All</button>
+				 <p></p>
+				<button class="ui button" type="submit">Submit</button>
+			</form>
+		</div>
+		<div class="eleven wide column feed">
+			<h1> test</h1>
+
+		</div>
+	</div>
+	<div class="wrapper">
+		
+	</div>
+	<script src="../javascript/createEvent.js"></script>
+</body>
+</html>

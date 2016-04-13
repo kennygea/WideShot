@@ -93,6 +93,10 @@ body {
 	font-size: 4em;
 }
 
+span {
+	color: #FFFFFF
+}
+
 #profile_pic{
 	height: auto;
 	width: auto;
@@ -132,6 +136,7 @@ body {
 .buffer.profile {
 	height: 50px;
 }
+
 
 #first_row{
 
