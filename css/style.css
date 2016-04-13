@@ -8,15 +8,24 @@ body {
 }
 
 .header{
-
+	min-height: 2.5em;
 }
 
 .ui.header.wordmark{
 	position: relative;
-	left: 15px;
-	top: 3px;
+	left: 2em;
+	top: .75em;
+	font-size: 18pt;
 	color: #f0f0f5;
 	font-family: 'Poiret One', cursive;
+}
+
+.ui.secondary.menu>.topbar.item {
+	font-size: 14pt;
+}
+
+.item>.user.icon {
+	font-size: 2em;
 }
 
 #home, #projects{
@@ -41,6 +50,7 @@ body {
 
 .ui.cards>.about.card{
 	min-height: 400px;
+	left:12px;
 	box-shadow: 0 3px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5
 }
 
@@ -49,9 +59,22 @@ body {
 }
 
 #first_row{
+	background-image: url("file://C:/Users/Garron/Dropbox/6.813/Group Project/WideShot/images/profile_background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	top:150px;
 	height: auto;
-	margin-top:150px;
+	width: 100%;
 	padding-bottom: 50px;
 	padding left: 0px;
-	border-bottom: 7px solid gray;
+	border-bottom: 7px solid #9595b7;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.profile_header{
+	width: 60%;
+	margin: auto;
+	padding-top: 1em;
+	text-align: center;
 }
