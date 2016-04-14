@@ -47,5 +47,4 @@ $(document).on('ready', function() {
             .jcarouselPagination();
     });
 
->>>>>>> f6c5703f8081bc00490e5991aa0b16a4331ae883
 });
