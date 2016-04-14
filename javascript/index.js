@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	$('.user.icon').on('click', function() {
-		console.log(window.location.href);
 
 		window.location =  "./views/profile.html"
 	})
