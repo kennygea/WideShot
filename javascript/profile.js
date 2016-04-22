@@ -23,7 +23,17 @@ $(document).on('ready', function() {
                 $(this).addClass('inactive');
             })
             .jcarouselControl({
-                target: '-=1'
+                target: '-=1',
+                method: function() {
+                	this.carousel()
+            		.jcarousel('scroll', this.options('target'), true, function() {
+                		var targeted = $('.jcarousel').jcarousel('target')[0].id
+                		var info = past_projects[targeted]
+                		$('#movie_title').html(info["Title"])
+                		$('#movie_role').html(info["Role"])
+                		$('#movie_description').html(info["Description"])
+            		});
+    			},
             });
 
         $('.jcarousel-control-next')
@@ -34,7 +44,19 @@ $(document).on('ready', function() {
                 $(this).addClass('inactive');
             })
             .jcarouselControl({
-                target: '+=1'
+                target: '+=1',
+                method: function() {
+                	this.carousel()
+            		.jcarousel('scroll', this.options('target'), true, function() {
+            			if($(".jcarousel").jcarousel('target')[0]){
+	                		var targeted = $('.jcarousel').jcarousel('target')[0].id
+	                		var info = past_projects[targeted]
+	                		$('#movie_title').html(info["Title"])
+	                		$('#movie_role').html(info["Role"])
+	                		$('#movie_description').html(info["Description"])
+                		}
+            		});
+    			},
             });
 
         $('.jcarousel-pagination')

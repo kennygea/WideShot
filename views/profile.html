@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="../css/style.css" />
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
-
+  <script src="../info/past_pojects.json"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="../javascript/jquery.jcarousel-core.min.js"></script>
@@ -53,7 +53,6 @@
 							<div class="description">
 								<strong>Contact Information: </strong> human@ws.net<br>
 								<strong>Bio: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
-								<strong>Roles: </strong> Actor: 1
 							</div>
 						</div>
 					</div>
@@ -66,7 +65,7 @@
 					<h1 id="photo" class="ui center aligned icon header">
 						<img id="profile_pic" class="ui circular image" src="..\images\man.png">
 						<br>
-						Hugh Mann
+						<span id="name">Hugh Mann</span>
 					</h1>
 				</div>
 			</div>
@@ -81,27 +80,34 @@
 		</div>
 		</div>
 		<div class="ui two column grid">
-			<div class="column"/>
 			<div class="column">	
 				<div class="wrapper">
-	            <div class="jcarousel-wrapper">
-	                <div class="jcarousel">
-	                    <ul>
-	                        <li><img src="../images/grass_strands.png" width="600" height="400" alt=""></li>
-	                        <li><a href="./project.html"><img src="../images/baylife.png" width="600" height="400" alt=""></a></li>
-	                        <li><img src="../images/plane.jpg" width="600" height="400" alt=""></li>
-	                    </ul>
-	                </div>
+		            <div class="jcarousel-wrapper">
+		                <div class="jcarousel">
+		                    <ul>
+		                        <li id="growinggrass"><img src="../images/grass_strands.png" width="600" height="400" alt=""></li>
+		                        <li id="baylife2"><a href="./project.html"><img src="../images/baylife.png" width="600" height="400" alt=""></a></li>
+		                        <li id="planes"><img src="../images/plane.jpg" width="600" height="400" alt=""></li>
+		                    </ul>
+		                </div>
 
-	                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-	                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-	                
-	                <p class="jcarousel-pagination">
-	                    
-	                </p>
-            </div>
-        </div>
-		<div class = "column">
+		                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+		                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+		                
+		                <p class="jcarousel-pagination">
+		                    
+		                </p>
+	            	</div>
+        		</div>
+        	</div>
+			<div class = "column">
+				<div id="info">
+					<h2 id="movie_title">Growing Grass</h2><br>
+					<h3 id="movie_role" class = refont>Director</h3><br>
+					<h2>Description: </h2>
+					<p id="movie_description" class="refont">Watch some grass grow</p>
+				</div>
+			</div>
 		</div>
 		
 	

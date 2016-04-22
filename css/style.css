@@ -6,7 +6,7 @@ body {
   background-color: #FEFEFE;
   padding: 0;
   min-height: 100%;
-  font-family: 'Poiret One', cursive;
+  
 }
 
 .ui.grid>.row>.column {
@@ -25,7 +25,7 @@ body {
 }
 
 .header{
-	
+	font-family: 'Poiret One', cursive;
 }
 .four.wide.feed {
 	text-align: center;
@@ -138,6 +138,10 @@ span {
 
 .content{
 	line-height: 2em;
+}
+
+#name{
+	color: white;
 }
 
 .ui.three.column.grid.profile {
@@ -296,4 +300,12 @@ span {
     color: #fff;
     opacity: 1;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+}
+
+.refont{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#movie_description, #movie_role{
+	font-size: 1.75em;
 }
