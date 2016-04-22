@@ -1,5 +1,6 @@
 <html >
 <head>
+	<meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -10,110 +11,44 @@
  
 </head>
 <body>
-	<div class="ui modal">
-		<h1 class="ui dividing header feed">
-			<div class="ui transparent input">
-				<input type="text" placeholder="[Project Title]">
-			</div>
-		</h1>
-		<div class="ui two column grid">
-			<div class="row">
-				<div class="column">
-					<h2 class="ui dividing header feed">Your Roles:</h2>
-					<form class="ui form">
-						<div class="content">
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Producer</label>
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Director</label>
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Actors</label>
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Editors</label>
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Crew</label>
-								</div>
-							</div>
-						</div>
-					</form>
+	<div class="ui modal" style="padding: 20px;">
+		<form class="ui form">
+			<div class="four fields">
+				<div class="field">
+					<label>Project Title</label>
+					<input name="projectTitle" class='ui input' placeholder="Project Title..."></input>
 				</div>
-				<div class="column">
-					<h2 class="ui dividing header feed">Looking For:</h2>
-					<form class="ui form">
-						<div class="content">
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Producer</label>
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Director</label>
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Actors</label>
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Editors</label>
-								</div>
-							</div>
-							<div class="field">
-								<div class="ui checkbox">
-								  <input type="checkbox" tabindex="0" class="hidden">
-								  <label>Crew</label>
-								</div>
-							</div>
-						</div>
-					</form>
+				<div class="field">
+				  <label>My Roles</label>
+				  <select name="yourRoles" multiple="" class="ui dropdown">
+					<option value="">Select Values</option>
+					<option value="1">Producer</option>
+					<option value="2">Director</option>
+					<option value="3">Editor</option>
+					<option value="4">Actor</option>
+					<option value="5">Crew</option>
+				  </select>
+				</div>
+				<div class="field">
+				  <label>Looking For</label>
+				  <select name="lookingFor" multiple="" class="ui dropdown">
+					<option value="">Select Values</option>
+					<option value="1">Producers</option>
+					<option value="2">Directors</option>
+					<option value="3">Editors</option>
+					<option value="4">Actors</option>
+					<option value="5">Crew</option>
+				  </select>
+				</div>
+				<p></p>
+				<div class="field">
+					<label>Description</label>
+					<textarea name='projectDescription' rows="2"></textarea>
 				</div>
 			</div>
-		<div class="row">
-				<div class="column">
-				</div>
-				<div class="column">
-					<form class="ui form">
-						<div class="content">
-							<div class="field">
-								<label>Description:</label>
-								<textarea rows="2"></textarea>
-							</div>
-							<button name="description" id="createButton" class="ui primary centered button create">
-							Create
-							</button>
-							<a href="./index.html">
-								<input class="ui button cancel" type="button" value="Cancel" />
-							</a>
-						</div>				
-					</form>					
-				</div>
-			</div>
-		</div>
+		  <div class="ui submit button">Submit</div>
+		  <div class="ui error message"></div>
+		</form>
 	</div>
 	<div class="header">
 		<div class="ui secondary menu">
@@ -139,7 +74,7 @@
 	<div class="ui grid">
 		<div class="three wide column feed">
 			<h1 class="ui header feed">Filters:</h1>
-			<select class="ui fluid multiple dropdown" multiple="">
+			<select class="ui fluid multiple dropdown filter" multiple="">
 			  <option value="">Filters</option>
 			  <option value="Producers">Producers</option>
 			  <option value="Directors">Directors</option>
