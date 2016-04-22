@@ -6,7 +6,6 @@
   
  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
  
 </head>
@@ -98,14 +97,15 @@
 				<div class="column">
 				</div>
 				<div class="column">
-					<form action="./views/project.html" class="ui form">
+					<form class="ui form">
 						<div class="content">
 							<div class="field">
 								<label>Description:</label>
 								<textarea rows="2"></textarea>
 							</div>
-							<input type="submit" id="createButoon" class="ui primary centered button create">
-							</input>
+							<button name="description" id="createButton" class="ui primary centered button create">
+							Create
+							</button>
 							<a href="./index.html">
 								<input class="ui button cancel" type="button" value="Cancel" />
 							</a>
@@ -139,19 +139,19 @@
 	<div class="ui grid">
 		<div class="three wide column feed">
 			<h1 class="ui header feed">Filters:</h1>
-			<select class="ui fluid multiple search selection dropdown" multiple="">
+			<select class="ui fluid multiple dropdown" multiple="">
 			  <option value="">Filters</option>
-			  <option value="Pro">Producers</option>
-			  <option value="Dir">Directors</option>
-			  <option value="Act">Actors</option>
-			  <option value="Ed">Editors</option>
-			  <option value="Crw">Crew</option>
+			  <option value="Producers">Producers</option>
+			  <option value="Directors">Directors</option>
+			  <option value="Actors">Actors</option>
+			  <option value="Editors">Editors</option>
+			  <option value="Crew">Crew</option>
 			</select>
 		</div>
 		<div class=" nine wide column feed">
 			<h1 class="ui header feed">Projects</h1>
 			<div class="ui label"><a id="createProject"> Create Project<i class="plus icon"></i></a> </div>
-			<div class="ui blue segment project card">
+			<div class="ui blue segment project card projectInfo">
 				<div class="ui divided items">
 					<div class="item">
 						<div class="image">
@@ -168,14 +168,14 @@
 							</div>
 							<div class="extra">
 								<h2 class="ui header">Looking For: </h1>
-								<div class="ui label">Actors</div>
-								<div class="ui label">Editors</div>
+								<div class="ui label tags">Actors</div>
+								<div class="ui label tags">Editors</div>
 							</div>
 						</div>
 				    </div>
 				</div>
 			</div>
-			<div class="ui blue segment project card">
+			<div class="ui blue segment project card projectInfo">
 				<div class="ui divided items">
 					<div class="item">
 						<div class="image">
@@ -192,9 +192,9 @@
 							</div>
 							<div class="extra">
 								<h2 class="ui header">Looking For: </h1>
-								<div class="ui label">Actors</div>
-								<div class="ui label">Producers</div>
-								<div class="ui label">Editors</div>
+								<div class="ui label tags">Actors</div>
+								<div class="ui label tags">Producers</div>
+								<div class="ui label tags">Editors</div>
 							</div>
 						</div>
 				    </div>
