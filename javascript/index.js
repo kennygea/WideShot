@@ -44,7 +44,7 @@ $(document).ready(function() {
 							'<div class="ui divided items">' +
 								'<div class="item">' +
 									'<div class="image">' +
-										'<img src="./images/baylife.png">' +
+										'<img src="./images/placeholder.png">' +
 									'</div>' +
 									'<div class="content">' +
 										'<a class="header" href=' + url + '>' + projectTitle + '</a>' +
