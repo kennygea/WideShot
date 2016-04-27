@@ -1,8 +1,81 @@
 $(document).ready(function() {
+	
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+
+	function checkCookie() {
+		var exists = getCookie("projectTitle");
+		if (exists != "") {
+			projectTitle = exists; 
+			myRoles = getCookie('yourRoles').split(",");
+			lookingFor = getCookie('lookingFor').split(",");
+			projectDescription = getCookie('projectDescription');
+			
+			tags = ""
+			
+			for (var i=0; i<lookingFor.length; i++) {
+				tags += '<div class="ui label tags">' + lookingFor[i] + '</div>'
+			}
+			
+			url = "./views/project.html?projectTitle=" + projectTitle
+			
+			url = url.replace(" ", "%20")
+			
+			htmlString = '<div class="ui blue segment project card projectInfo">' +
+							'<div class="ui divided items">' +
+								'<div class="item">' +
+									'<div class="image">' +
+										'<img src="./images/baylife.png">' +
+									'</div>' +
+									'<div class="content">' +
+										'<a class="header" href=' + url + '>' + projectTitle + '</a>' +
+										'<div class="description">' + projectDescription +
+											
+											'<p></p>' +
+										'</div>' +
+										'<div class="extra">' +
+											tags +
+										'</div>' +
+									'</div>' +
+								'</div>' +
+							'</div>' +
+						'</div>'
+			
+			
+			$('#projectListings').append(htmlString)
+			return;
+		} else {
+			console.log('No cookies');
+			return;
+		}
+	}	
+	
+	checkCookie();
+	
 	$('.user.icon').on('click', function() {
 
 		window.location =  "./views/profile.html"
 	})
+	
 	$('#home').on('click', function() {
 		window.location.href = "./index.html"
 	})
@@ -13,19 +86,14 @@ $(document).ready(function() {
 		{ title: 'Editors' },
 		{ title: 'Actors' }];
 		
-	$('#createButton').on('click', function() {
-		var inputs = $('.ui.modal').find(":input");
-		console.log(inputs);
-		inputs.each(function(index, value){
-			console.log($(this).val())
-		})
-		
-	});
 	
 	$('.ui.submit.button').on('click', function(){
 		$form = $('.ui.form'),
 		allFields = $form.form('get values')
 		console.log(allFields);
+		for (key in allFields) {
+			setCookie(key, allFields[key], 1);
+		}
 	})
 	
 	$('.ui.form')
@@ -113,6 +181,11 @@ $(document).ready(function() {
 	
 	});
 	$('.ui.checkbox').checkbox();
+	
+
+	
+	
+	
 	
 });
 	  

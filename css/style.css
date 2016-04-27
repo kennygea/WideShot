@@ -19,6 +19,9 @@ body {
 	margin: 5px;
 }
 
+#calendar {
+	height: 100%;
+}
 
 .event {
 	height: 100px;

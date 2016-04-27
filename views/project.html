@@ -1,5 +1,6 @@
-	<html >
+<html >
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -15,24 +16,24 @@
 				<h1 class="ui header wordmark">WideShot</h1>
 			</div>
 			<a href="../index.html" id="home" class="item">Home</a>
-			<a href="./project.html" class="ui dropdown item">
+			<div class="ui dropdown item">
 				<span class="text">My Projects</span>
 				<i class="dropdown icon"></i>
 				<div class="menu">
 					<div class="header">Ongoing Projects</div>
-					<div class="item">Baylife 2</div>
+					<a href='./project.html' class="item">Baylife 2</a>
 					<div class="divider"></div>
 					<div class="header">Past Projects</div>
 					<div class="item">Baylife</div>
 					<div class="item">The Room</div>
 				</div>
-			</a>
+			</div>
 			<a href="./profile.html" class="item"><i class="user icon"></i></a>
 		</div>
 	</div>
 	<div class="ui grid centered">
 		<div class="five wide column project">
-			<h1 class="ui header centered">Baylife 2</h1>
+			<h1 id="projectTitle" class="ui header centered">Baylife 2</h1>
 			<div class = "ui cards centered"> 
 				<div class="card">
 					<div class="image">
@@ -40,9 +41,6 @@
 					</div>
 					<div class="content">
 						<a class="header">Schedule</a>
-					</div>
-					<div class="extra content">
-						<a><i class="user icon"></i>12 Attending</a>
 					</div>
 				</div>
 				<div class="card">
@@ -60,67 +58,18 @@
 		</div>
 		<div class="ten wide column project">
 			<h1 class="ui header centered">Events</h1>
-			<div class = "ui cards centered"> 
-				<div class="card">
-					<div class="image">
-					</div>
-					<div class="content">
-						<a class="header">1st Shoot</a>
-						<div class="meta">
-							<span class="date">5/1/2016</span>
-						</div>
-						<div class="description">
-						First shoot @ Revere Beach
-						</div>
-					</div>
-					<div class="extra content">
-						<a><i class="user icon"></i>12 Attending</a>
-					</div>
-				</div>
-				<div class="card">
-					<div class="image">
-					</div>
-					<div class="content">
-						<a class="header">2nd Shoot</a>
-						<div class="meta">
-							<span class="date">5/8/2016</span>
-						</div>
-						<div class="description">
-						Second shoot @ Revere Beach
-						</div>
-					</div>
-					<div class="extra content">
-						<a><i class="user icon"></i>12 Attending</a>
-					</div>
-				</div>
+			<div id="events"class = "ui cards centered"> 
 				<div class="card">
 					<div class="image">
 						
 					</div>
 					<div class="content">
-						<a class="header">1st Edit</a>
+						<a class="header createEvent">Add Event</a>
 						<div class="meta">
 							<span class="date">5/1/2016</span>
 						</div>
 						<div class="description">
-						1st Edit For Baylife 2
-						</div>
-					</div>
-					<div class="extra content">
-						<a><i class="user icon"></i>1 Attending</a>
-					</div>
-				</div>
-				<div class="card">
-					<div class="image">
-						
-					</div>
-					<div class="content">
-						<a href="./CreateEvent.html" class="header">Add Event</a>
-						<div class="meta">
-							<span class="date">5/1/2016</span>
-						</div>
-						<div class="description">
-						<a href="./CreateEvent.html"><i class="plus icon"></i>Create</a>
+						<a class="createEvent"> <i class="plus icon"></i>Create</a>
 						</div>
 					</div>
 					<div class="extra content">

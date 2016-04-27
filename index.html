@@ -22,22 +22,22 @@
 				  <label>My Roles</label>
 				  <select name="yourRoles" multiple="" class="ui dropdown">
 					<option value="">Select Values</option>
-					<option value="1">Producer</option>
-					<option value="2">Director</option>
-					<option value="3">Editor</option>
-					<option value="4">Actor</option>
-					<option value="5">Crew</option>
+					<option value="Producer">Producer</option>
+					<option value="Director">Director</option>
+					<option value="Editor">Editor</option>
+					<option value="Actor">Actor</option>
+					<option value="Crew">Crew</option>
 				  </select>
 				</div>
 				<div class="field">
 				  <label>Looking For</label>
 				  <select name="lookingFor" multiple="" class="ui dropdown">
 					<option value="">Select Values</option>
-					<option value="1">Producers</option>
-					<option value="2">Directors</option>
-					<option value="3">Editors</option>
-					<option value="4">Actors</option>
-					<option value="5">Crew</option>
+					<option value="Producers">Producers</option>
+					<option value="Directors">Directors</option>
+					<option value="Editors">Editors</option>
+					<option value="Actors">Actors</option>
+					<option value="Crew">Crew</option>
 				  </select>
 				</div>
 				<p></p>
@@ -56,18 +56,18 @@
 				<h1 class="ui header wordmark">WideShot</h1>
 			</div>
 			<a id="home" class="active item">Home</a>
-			<a href="./views/project.html" class="ui dropdown item" >
+			<div class="ui dropdown item" >
 				<span class="text">My Projects</span>
 				<i class="dropdown icon"></i>
 				<div class="menu">
 					<div class="header">Ongoing Projects</div>
-					<div class="item">Baylife 2</div>
+					<a href="./views/project.html" class="item">Baylife 2</a>
 					<div class="divider"></div>
 					<div class="header">Past Projects</div>
 					<div class="item">Baylife</div>
 					<div class="item">The Room</div>
 				</div>
-			</a>
+			</div>
 			<a class="item"><i class="user icon"></i></a>
 		</div>
 	</div>
@@ -83,7 +83,7 @@
 			  <option value="Crew">Crew</option>
 			</select>
 		</div>
-		<div class=" nine wide column feed">
+		<div id="projectListings" class=" nine wide column feed">
 			<h1 class="ui header feed">Projects</h1>
 			<div class="ui label"><a id="createProject"> Create Project<i class="plus icon"></i></a> </div>
 			<div class="ui blue segment project card projectInfo">
@@ -93,10 +93,8 @@
 							<img src="./images/baylife.png">
 						</div>
 						<div class="content">
-							<a href="./views/project.html" class="header">Baylife 2</a>
-							<div class="meta">
-								<span class="cinema">The Return of Bay</span>
-							</div>
+							<a href="./views/project.html?projectTitle=Baylife 2" class="header">Baylife 2</a>
+
 							<div class="description">
 								Sun, Money, and Women
 								<p></p>
@@ -118,9 +116,7 @@
 						</div>
 						<div class="content">
 							<a class="header">Cutting Grass</a>
-							<div class="meta">
-								<span class="cinema">I am the one who mows</span>
-							</div>
+
 							<div class="description">
 								Mow that grass!
 								<p></p>

@@ -1,14 +1,20 @@
 <html >
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.0/fullcalendar.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.0/jquery.timepicker.min.css"/>
   <link rel="stylesheet" href="../css/style.css" />
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
- 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.0/fullcalendar.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.9.0/jquery.timepicker.js'></script>
+
  
  
 </head>
@@ -36,7 +42,7 @@
 	</div>
 	<div class="ui grid">
 		<div class="four wide column feed">
-			<h2 class="ui header feed">Create an Event:</h1>
+			<h2 id="projectFor" class="ui header feed">Create an Event:</h1>
 			<form action="./project.html" class="ui form">
 				<div class="field">
 					<label>Title</label>
@@ -45,7 +51,7 @@
 				<div class = "fields">
 					<div class="field">
 						<label>Time</label>
-						<input type="text" name="time" placeholder="Time">
+						<input type="text" name="time" placeholder="Time" id="timepicker">
 					</div>
 					<div class="field">
 						<label>Date</label>
@@ -58,22 +64,27 @@
 				</div>
 				<div class="field">
 					<label>Description</label>
-					<textarea rows="2"></textarea>
+					<textarea name='description' rows="2"></textarea>
 				 </div>
 				 <div class="field">
 					<label>Add Member</label>
-					<input type="text" name="memebers" placeholder="John Doe...">
+					<select name="members" multiple="" class="ui dropdown">
+						<option value="">Select Values</option>
+						<option value="Hugh Mann">Hugh Mann</option>
+						<option value="Garron Charles">Garron Charles</option>
+						<option value="John Stephens">John Stephens</option>
+						<option value="Kenny Gea">Kenny Gea</option>
+					</select>
 				 </div>
 				 <button class="ui button" type="submit">Clear</button>
 				 <button class="ui button">Add All</button>
 				 <p></p>
-				<button class="ui button">Submit</button>
+				<button class="ui submit button">Submit</button>
+				<div class="ui error message"></div>
 			</form>
 		</div>
 		<div class="eleven wide column feed">
-			<div class="responsive-iframe-container">
-				<iframe src="https://calendar.google.com/calendar/embed?title=Baylife&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=jvrpef4bk0a3n5me8eipsf0qu4%40group.calendar.google.com&amp;color=%238D6F47&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-			</div>
+				<div id='calendar'></div>
 		</div>
 	</div>
 	<div class="wrapper">
