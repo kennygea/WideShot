@@ -69,6 +69,7 @@ $(document).ready(function() {
 		transition: 'drop'
 	  });
 	  
+	$('.ui.form').attr('action', './project.html?projectTitle=' + projectTitle);
 	  
 	$('.ui.form')
 	  .form({
