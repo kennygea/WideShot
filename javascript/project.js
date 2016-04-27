@@ -26,6 +26,23 @@ $(document).ready(function() {
 		return "";
 	}
 	
+	function checkCookie() {
+		var exists = getCookie("projectTitle");
+		console.log(exists);
+		if (exists != "") {
+			projectTitle = exists; 
+			
+			url = "./project.html?projectTitle=" + projectTitle
+			
+			url = url.replace(" ", "%20")
+			
+			$('#ongoingProjects').after('<a href=' + url + ' class=item>' + projectTitle + '</a>')
+		}
+	}
+	
+	checkCookie();
+			
+	
 	var QueryString = function () {
 	  // This function is anonymous, is executed immediately and 
 	  // the return value is assigned to QueryString!
@@ -62,7 +79,6 @@ $(document).ready(function() {
 	
 	if (getCookie('events') !== "") {
 		events = JSON.parse(getCookie('events'));
-		console.log(events);
 		for (project in events) {
 			if (project === projectTitle) {
 				for (event in events[project]) {

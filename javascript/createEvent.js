@@ -26,6 +26,21 @@ $(document).ready(function() {
 		return "";
 	}
 	
+	function checkCookie() {
+		var exists = getCookie("projectTitle");
+		if (exists != "") {
+			projectTitle = exists; 
+			
+			url = "./project.html?projectTitle=" + projectTitle
+			
+			url = url.replace(" ", "%20")
+			
+			$('#ongoingProjects').after('<a href=' + url + ' class=item>' + projectTitle + '</a>')
+		}
+	}
+		
+	checkCookie();
+	
 	var QueryString = function () {
 	  // This function is anonymous, is executed immediately and 
 	  // the return value is assigned to QueryString!

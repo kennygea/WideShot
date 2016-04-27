@@ -30,6 +30,7 @@ $(document).ready(function() {
 			lookingFor = getCookie('lookingFor').split(",");
 			projectDescription = getCookie('projectDescription');
 			
+			
 			tags = ""
 			
 			for (var i=0; i<lookingFor.length; i++) {
@@ -39,6 +40,8 @@ $(document).ready(function() {
 			url = "./views/project.html?projectTitle=" + projectTitle
 			
 			url = url.replace(" ", "%20")
+			
+			$('#ongoingProjects').after('<a href=' + url + ' class=item>' + projectTitle + '</a>')
 			
 			htmlString = '<div class="ui blue segment project card projectInfo">' +
 							'<div class="ui divided items">' +
@@ -181,10 +184,6 @@ $(document).ready(function() {
 	
 	});
 	$('.ui.checkbox').checkbox();
-	
-
-	
-	
 	
 	
 });
