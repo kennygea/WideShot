@@ -27,16 +27,17 @@ $(document).ready(function() {
 	}
 	
 	function checkCookie() {
-		var exists = getCookie("projectTitle");
-		console.log(exists);
+		var exists = getCookie("projects");
 		if (exists != "") {
-			projectTitle = exists; 
+			projects = JSON.parse(exists);
+			for (project in projects) {
+				console.log(project);
+				url = "./project.html?projectTitle=" + project
 			
-			url = "./project.html?projectTitle=" + projectTitle
+				url = url.replace(" ", "%20")
 			
-			url = url.replace(" ", "%20")
-			
-			$('#ongoingProjects').after('<a href=' + url + ' class=item>' + projectTitle + '</a>')
+				$('#ongoingProjects').after('<a href=' + url + ' class=item>' + project + '</a>')
+			}
 		}
 	}
 	
@@ -75,6 +76,41 @@ $(document).ready(function() {
 		projectTitle = "Baylife 2";
 		setCookie('currentProject', "Baylife 2");
 		$('#projectTitle').text("Baylife 2");
+		eventString = '<div class="card">' +
+							'<div class="image">' +
+							'</div>' +
+							'<div class="content">' +
+								'<a class="header">First Shoot</a>' +
+								'<div class="meta">' + 
+									'<span class="date"> 4/15/2016 3:00 pm</span>' +
+								'</div>' +
+								'<div class="description">' +
+								'First shoot @ Kresge <p></p> Be there or be square!' + 
+								'</div>' +
+							'</div>' + 
+							'<div class="extra content">' +
+								'<a><i class="user icon"></i>4</a>' +
+							'</div>' +
+						'</div>'
+		$('#events').prepend(eventString);
+		eventString = '<div class="card">' +
+							'<div class="image">' +
+							'</div>' +
+							'<div class="content">' +
+								'<a class="header">First Edit</a>' +
+								'<div class="meta">' + 
+									'<span class="date"> 5/20/2016 3:00 pm</span>' +
+								'</div>' +
+								'<div class="description">' +
+								'First shoot @ Somewhere <p></p> First edit due!' + 
+								'</div>' +
+							'</div>' + 
+							'<div class="extra content">' +
+								'<a><i class="user icon"></i>1</a>' +
+							'</div>' +
+						'</div>'
+		$('#events').prepend(eventString);		
+		
 	}
 	
 	if (getCookie('events') !== "") {
@@ -83,6 +119,7 @@ $(document).ready(function() {
 			if (project === projectTitle) {
 				for (event in events[project]) {
 					console.log(event);
+					console.log(events[project][event]);
 					eventString = '<div class="card">' +
 							'<div class="image">' +
 							'</div>' +
@@ -92,7 +129,7 @@ $(document).ready(function() {
 									'<span class="date">' + events[project][event].date + " " + events[project][event].time + '</span>' +
 								'</div>' +
 								'<div class="description">' +
-								'First shoot @' + events[project][event].location + "<p></p>" + events[project][event].description + 
+								event + ' @ ' + events[project][event].location + "<p></p>" + events[project][event].description + 
 								'</div>' +
 							'</div>' + 
 							'<div class="extra content">' +
@@ -104,6 +141,8 @@ $(document).ready(function() {
 			}
 		}
 	}
+	
+	
 	
 	$('.createEvent').attr('href', './CreateEvent.html?projectTitle=' + $('#projectTitle').text());
 	

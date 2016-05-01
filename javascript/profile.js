@@ -22,20 +22,22 @@ $(document).on('ready', function() {
 		return "";
 	}
 	
-	checkCookie();
-	
 	function checkCookie() {
-		var exists = getCookie("projectTitle");
+		var exists = getCookie("projects");
 		if (exists != "") {
-			projectTitle = exists; 
+			projects = JSON.parse(exists);
+			for (project in projects) {
+				console.log(project);
+				url = "./project.html?projectTitle=" + project
 			
-			url = "./project.html?projectTitle=" + projectTitle
+				url = url.replace(" ", "%20")
 			
-			url = url.replace(" ", "%20")
-			
-			$('#ongoingProjects').after('<a href=' + url + ' class=item>' + projectTitle + '</a>')
+				$('#ongoingProjects').after('<a href=' + url + ' class=item>' + project + '</a>')
+			}
 		}
 	}
+	
+	checkCookie();
 		
 	$('#home').on('click', function() {
 

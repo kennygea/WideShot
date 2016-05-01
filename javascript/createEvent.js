@@ -27,15 +27,17 @@ $(document).ready(function() {
 	}
 	
 	function checkCookie() {
-		var exists = getCookie("projectTitle");
+		var exists = getCookie("projects");
 		if (exists != "") {
-			projectTitle = exists; 
+			projects = JSON.parse(exists);
+			for (project in projects) {
+				console.log(project);
+				url = "./project.html?projectTitle=" + project
 			
-			url = "./project.html?projectTitle=" + projectTitle
+				url = url.replace(" ", "%20")
 			
-			url = url.replace(" ", "%20")
-			
-			$('#ongoingProjects').after('<a href=' + url + ' class=item>' + projectTitle + '</a>')
+				$('#ongoingProjects').after('<a href=' + url + ' class=item>' + project + '</a>')
+			}
 		}
 	}
 		
@@ -84,11 +86,40 @@ $(document).ready(function() {
 		transition: 'drop'
 	  });
 	  
-	$('.ui.form').attr('action', './project.html?projectTitle=' + projectTitle);
+	var validation = function(event) {
+				event.preventDefault();
+				$form = $('.ui.form'),
+				allFields = $form.form('get values')
+				string = JSON.stringify(allFields);
+				allEvents = getCookie('events');
+				if (allEvents !== "") {
+					eventList = JSON.parse(allEvents);
+					if (typeof eventList[projectTitle] == "undefined") {
+						eventList[projectTitle] = {}
+					} 	
+					eventList[projectTitle][allFields.title] = allFields
+					setCookie('events', JSON.stringify(eventList), 1)
+				}
+				else {
+					obj = {}
+					obj[projectTitle] = {}
+					obj[projectTitle][allFields.title] = allFields
+					setCookie('events', JSON.stringify(obj), 1)
+				}
+				url = "./project.html?projectTitle=" + projectTitle
+				
+				url = url.replace(" ", "%20")
+				
+				console.log(url);
+				
+				window.location = url;
+			}
 	  
 	$('.ui.form')
 	  .form({
 		on: 'blur',
+		onSuccess: validation,
+	  
 		fields: {
 		  title: {
 			 identifier  : 'title',
@@ -134,10 +165,9 @@ $(document).ready(function() {
 				prompt : 'Please give a brief description!'
 			  }
 			]
-		  }
-		},
-		memebers: {
-			identifier  : 'memebers',
+		  },
+		  members: {
+			identifier  : 'members',
 			rules: [
 			  {
 				type   : 'minCount[1]',
@@ -145,28 +175,9 @@ $(document).ready(function() {
 			  }
 			]
 		  }
-		})
+		}
+	  })
 	  
-	$('.ui.submit.button').on('click', function(){
-		$form = $('.ui.form'),
-		allFields = $form.form('get values')
-		string = JSON.stringify(allFields);
-		allEvents = getCookie('events');
-		if (allEvents !== "") {
-			eventList = JSON.parse(allEvents);
-			if (typeof eventList[projectTitle] == "undefined") {
-				eventList[projectTitle] = {}
-			}
-			eventList[projectTitle][allFields.title] = allFields
-			setCookie('events', JSON.stringify(eventList), 1)
-		}
-		else {
-			obj = {}
-			obj[projectTitle] = {}
-			obj[projectTitle][allFields.title] = allFields
-			setCookie('events', JSON.stringify(obj), 1)
-		}
-	})
 	
 	$('#calendar').fullCalendar({
 		 aspectRatio: 2,
@@ -188,7 +199,6 @@ $(document).ready(function() {
 				}
 			}
 		}
-		console.log(eventArray);
 		$('#calendar').fullCalendar('addEventSource', eventArray);
 	}
 	

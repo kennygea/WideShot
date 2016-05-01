@@ -1,6 +1,6 @@
 <html >
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
   <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
@@ -71,7 +71,7 @@
 			<a class="item"><i class="user icon"></i></a>
 		</div>
 	</div>
-	<div class="ui grid">
+	<div class="ui stackable padded equal height grid">
 		<div class="three wide column feed">
 			<h1 class="ui header feed">Filters:</h1>
 			<select class="ui fluid multiple dropdown filter" multiple="">
@@ -134,7 +134,7 @@
 		</div>
 		<div class="three wide column feed">
 			<h1 class="ui header feed">Reminders</h1>
-			<div class="ui feed">
+			<div class="ui feed" id="reminders">
 			  <div class="event">
 				<div class="label">
 					<i class="camera icon"></i>
@@ -162,13 +162,9 @@
 				</div>
 			  </div>
 			</div>
-
 		</div>
 	</div>
-	<div class="wrapper">
-	</div>
-	
-	
+
 	<script src="./javascript/index.js"></script>
 </body>
 </html>
