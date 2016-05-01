@@ -145,6 +145,7 @@ $(document).ready(function() {
 	
 	
 	$('.createEvent').attr('href', './CreateEvent.html?projectTitle=' + $('#projectTitle').text());
+	$('#schedule').attr('href', './CreateEvent.html?projectTitle=' + $('#projectTitle').text());
 	
 	$('.ui.dropdown')
 	  .dropdown({

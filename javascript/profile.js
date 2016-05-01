@@ -1,5 +1,7 @@
 $(document).on('ready', function() {
 	
+	console.log(past_projects);
+	
 	function setCookie(cname, cvalue, exdays) {
 		var d = new Date();
 		d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -27,7 +29,7 @@ $(document).on('ready', function() {
 		if (exists != "") {
 			projects = JSON.parse(exists);
 			for (project in projects) {
-				console.log(project);
+
 				url = "./project.html?projectTitle=" + project
 			
 				url = url.replace(" ", "%20")
