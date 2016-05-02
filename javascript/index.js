@@ -71,9 +71,9 @@ $(document).ready(function() {
 	checkCookie();
 	
 	function checkEvents() {
-		var exists = getCookie("events");
+		var exists = getCookie('events');
 		console.log(exists);
-		if (exists != "") {
+		if (exists !== "") {
 			events = JSON.parse(exists)
 			eventListing = []
 			for (project in events) {
