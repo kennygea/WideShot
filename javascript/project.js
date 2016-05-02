@@ -127,7 +127,7 @@ $(document).ready(function() {
 						attendee = events[project][event].members[i]
 						Attending += attendee + '<p></p>'
 					}
-					Attendning += "</div>"
+					Attending += "</div>"
 					
 					
 					eventString = '<div class="card">' +
