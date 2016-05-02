@@ -122,13 +122,14 @@ $(document).ready(function() {
 				for (event in events[project]) {
 					console.log(event);
 					console.log(events[project][event]);
-					Attending = '</div class="attending"><p></p>'
+					Attending = '<div style="display: none" class="attending"><p></p>'
 					for (i=0; i<events[project][event].members.length; i++) {
 						attendee = events[project][event].members[i]
 						Attending += attendee + '<p></p>'
 					}
 					Attending += "</div>"
 					
+					console.log(Attending);
 					
 					eventString = '<div class="card">' +
 							'<div class="image">' +
@@ -144,7 +145,7 @@ $(document).ready(function() {
 							'</div>' + 
 							'<div class="extra content">' +
 								'<a class="show list"><i class="user icon"></i>' +  events[project][event].members.length+ '</a>' +
-								 + Attending + 
+								 Attending + 
 						'</div>'
 					$('#events').prepend(eventString);
 				}
