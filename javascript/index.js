@@ -72,6 +72,7 @@ $(document).ready(function() {
 	
 	function checkEvents() {
 		var exists = getCookie("events");
+		console.log(exists);
 		if (exists != "") {
 			events = JSON.parse(exists)
 			eventListing = []
