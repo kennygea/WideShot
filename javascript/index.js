@@ -101,7 +101,7 @@ $(document).ready(function() {
 									'<div class="date">' + upcoming.date +
 									'</div>' +
 									'<div class="summary">' +
-										'You have a <a>' + upcoming.event + '</a> for <a href=' + url + '>' + upcoming.project + '</a>.' +
+										'You have a <ins>' + upcoming.event + '</ins> for <a href=' + url + '>' + upcoming.project + '</a>.' +
 									'</div>' +
 								'</div>' +
 							'</div>'
