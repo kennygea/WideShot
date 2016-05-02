@@ -8,7 +8,7 @@ $(document).ready(function() {
 		var d = new Date();
 		d.setTime(d.getTime() + (exdays*24*60*60*1000));
 		var expires = "expires="+d.toUTCString();
-		document.cookie = cname + "=" + cvalue + "; " + expires;
+		document.cookie = cname + "=" + cvalue + "; " + expires + ';path=/';
 	}
 
 	function getCookie(cname) {
@@ -89,7 +89,8 @@ $(document).ready(function() {
 								'</div>' +
 							'</div>' + 
 							'<div class="extra content">' +
-								'<a><i class="user icon"></i>4</a>' +
+								'<a class="show list"><i class="user icon"></i>4</a>' +
+								'<div style="display:none" class="attending"><p></p>Hugh Mann <p></p>Kenny Gea<p></p>Garron Charles<p></p>John Stephens<p></p></div>' +
 							'</div>' +
 						'</div>'
 		$('#events').prepend(eventString);
@@ -106,7 +107,8 @@ $(document).ready(function() {
 								'</div>' +
 							'</div>' + 
 							'<div class="extra content">' +
-								'<a><i class="user icon"></i>1</a>' +
+								'<a class="show list"><i class="user icon"></i>1</a>' +
+								'<div style="display:none" class="attending"><p></p>Garron Charles<p></p></div>' +
 							'</div>' +
 						'</div>'
 		$('#events').prepend(eventString);		
@@ -120,6 +122,15 @@ $(document).ready(function() {
 				for (event in events[project]) {
 					console.log(event);
 					console.log(events[project][event]);
+					Attending = '<div style="display: none" class="attending"><p></p>'
+					for (i=0; i<events[project][event].members.length; i++) {
+						attendee = events[project][event].members[i]
+						Attending += attendee + '<p></p>'
+					}
+					Attending += "</div>"
+					
+					console.log(Attending);
+					
 					eventString = '<div class="card">' +
 							'<div class="image">' +
 							'</div>' +
@@ -133,8 +144,8 @@ $(document).ready(function() {
 								'</div>' +
 							'</div>' + 
 							'<div class="extra content">' +
-								'<a><i class="user icon"></i>' +  events[project][event].members.length+ '</a>' +
-							'</div>' +
+								'<a class="show list"><i class="user icon"></i>' +  events[project][event].members.length+ '</a>' +
+								 Attending + 
 						'</div>'
 					$('#events').prepend(eventString);
 				}
@@ -143,7 +154,14 @@ $(document).ready(function() {
 	}
 	
 	
-	
+	$('.show.list').on('click', function() {
+		if ($(this).next().css('display') === "none") {	
+		$(this).next().css('display', 'inline'); 
+			}
+		else {
+			$(this).next().css('display', 'none'); 
+		}
+	})
 	$('.createEvent').attr('href', './CreateEvent.html?projectTitle=' + $('#projectTitle').text());
 	$('#schedule').attr('href', './CreateEvent.html?projectTitle=' + $('#projectTitle').text());
 	
