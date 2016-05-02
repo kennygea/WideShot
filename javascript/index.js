@@ -70,11 +70,8 @@ $(document).ready(function() {
 	
 	checkCookie();
 	
-	function checkEvents() {
-		var exists = getCookie('events');
-		console.log(exists);
-		if (exists !== "") {
-			events = JSON.parse(exists)
+		if (getCookie('events') !== "") {
+			events = JSON.parse(getCookie('events'))
 			eventListing = []
 			for (project in events) {
 				for (event in events[project]) {
@@ -112,9 +109,7 @@ $(document).ready(function() {
 				$('#reminders').append(htmlString);
 			}
 		}
-	}
-	
-	checkEvents();
+
 	
 	$('.user.icon').on('click', function() {
 
