@@ -152,5 +152,35 @@ $(document).ready(function() {
 		// you can use any ui transition
 		transition: 'drop'
 	  });
+	  
+	var content = [
+	{title: 'Bo Jackman'},
+	{title: 'Johnny Depp'},
+	{title: 'Diana Dee'},
+	{title: 'John Smith'}
+	]
+	
+	var search = function(res, resp) {
+		memberlist = $('.content.project').children('.header')
+		append = true;
+		for (var i=0; i < memberlist.length; i++ ) {
+			if (memberlist[i].innerText === res.title) {
+				append = false;
+			}
+		}
+		if (append) {
+			$('#searchbar').before('<p class="header">' + res.title +'<a><i class="remove icon"></i></a></p>')
+			$('.remove.icon').on('click', function() {
+				$(this).closest('.header').remove()
+			})
+		}
+	}
+	
+	$('.ui.search')
+	  .search({
+		source: content,
+		onSelect: search,
+	  })
+	;
 	
 })

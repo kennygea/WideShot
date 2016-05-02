@@ -74,6 +74,14 @@ $(document).on('ready', function() {
                 		$('#movie_title').html(info["Title"])
                 		$('#movie_role').html(info["Role"])
                 		$('#movie_description').html(info["Description"])
+						
+						if (info["Title"] === "Bay Life 2" ) {
+							$('#projectlink').attr('href', './project.html')
+						}
+						else {
+							$('#projectlink').removeAttr('href');
+						}
+						
             		});
     			},
             });
@@ -96,6 +104,14 @@ $(document).on('ready', function() {
 	                		$('#movie_title').html(info["Title"])
 	                		$('#movie_role').html(info["Role"])
 	                		$('#movie_description').html(info["Description"])
+							console.log(info["Title"])
+							
+							if (info["Title"] === "Bay Life 2" ) {
+								$('#projectlink').attr('href', './project.html')
+							}
+							else {
+								$('#projectlink').removeAttr('href');
+							}
                 		}
             		});
     			},
